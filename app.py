@@ -5,6 +5,8 @@ from dotenv import load_dotenv
 from pytesseract import image_to_string
 from PIL import Image
 from io import BytesIO
+
+import pytesseract
 import pypdfium2 as pdfium
 import streamlit as st
 import multiprocessing
@@ -14,7 +16,9 @@ import json
 import os
 
 load_dotenv()
-# os.environ['OPENAI_API_KEY'] = st.secrets['open_ai_key']
+
+# Set tesseract path
+pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
 
 # 1. Convert PDF file into images via pypdfium2
 def convert_pdf_to_images(file_path, scale=300/72):
