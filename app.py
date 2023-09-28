@@ -19,10 +19,10 @@ load_dotenv()
 
 # Set tesseract path
 # Set the tesseract path
-pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
+# pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
 
-# Set the tessdata path
-os.environ['TESSDATA_PREFIX'] = '/app/.apt/usr/share/tesseract-ocr/4.00/'
+# Set the tessdata path to be the manually added files
+os.environ['TESSDATA_PREFIX'] = './tessdata'
 
 # 1. Convert PDF file into images via pypdfium2
 def convert_pdf_to_images(file_path, scale=300/72):
