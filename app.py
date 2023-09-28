@@ -135,11 +135,7 @@ def main():
             print('Filename: {0}'.format(file.name))
             with NamedTemporaryFile(dir='.', suffix='.csv') as f:
                 f.write(file.getbuffer())
-                try:
-                    content = extract_content_from_url(f.name)
-                except:
-                    print('Failed for {}'.format(f.name))
-                    continue
+                content = extract_content_from_url(f.name)
                 data = extract_structured_data(content, data_points)
                 json_data = json.loads(data)
 
