@@ -1,2 +1,3 @@
 venv
 *.toml
+.DS_Store
