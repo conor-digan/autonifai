@@ -2,11 +2,10 @@ from langchain.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from dotenv import load_dotenv
-from pytesseract import image_to_string
+from pytesseract import image_to_string, pytesseract
 from PIL import Image
 from io import BytesIO
 
-import pytesseract
 import pypdfium2 as pdfium
 import streamlit as st
 import multiprocessing
