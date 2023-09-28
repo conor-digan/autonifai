@@ -14,7 +14,7 @@ import json
 import os
 
 load_dotenv()
-os.environ['OPENAI_API_KEY'] = st.secrets['open_ai_key']
+# os.environ['OPENAI_API_KEY'] = st.secrets['open_ai_key']
 
 # 1. Convert PDF file into images via pypdfium2
 def convert_pdf_to_images(file_path, scale=300/72):
